@@ -29,8 +29,9 @@ public class SpringRelationDataAccessApplication implements CommandLineRunner {
 
 		log.info("Creating tables");
 
-		jdbcTemplate.execute("DROP TABLE customers IF EXISTS");
-		jdbcTemplate.execute("CREATE TABLE customers(id SERIAL, first_name VARCHAR(255), last_name VARCHAR(255))");
+		// 尝试在sql文件中执行
+		// jdbcTemplate.execute("DROP TABLE customers IF EXISTS");
+		// jdbcTemplate.execute("CREATE TABLE customers(id SERIAL, first_name VARCHAR(255), last_name VARCHAR(255))");
 
 		// Split up the array of whole names into an array of first/last names
 		List<Object[]> splitUpNames = Arrays.asList("John Woo", "Jeff Dean", "Josh Bloch", "Josh Long").stream()
